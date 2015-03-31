@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mario</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--підключаємо javascript-->
+    <script type="text/javascript" src="myjava.js"></script>
+
+    <!--  <body onload="MarioLoadTime();" >-->
+<body>
+<b>Координати Mario</b>
+<p> X: <input type="text" id="RedX" value=""/></p>
+<p> Y: <input type="text" id="RedY" value=""/></p>
+<button onclick="startMove(); return true;">Вперед</button>
+<div id="field">   <!-- onclick="field(event);" -->
+    <div id="MR"
+         onmousedown="Motion_Elem(this,event); return false;"
+         onclick="MarioClick(this);MarioLoadWayR(this);">Mario_Red
+    </div>
+    <!-- для div задаємо відносну позицію для відрахування координатів з
+         лівого верхнього кута.
+         onmousedown - по натисненню на кнопку миші спрацьовує подія,
+         яка викликає ф-ю dragOBJ.
+         return false для відміни події, не дасть спрацювати по замовчуванню.
+         onclick - по кліку фіксуємо id елемента для можливості руху клавішами-->
+    <div id="MB"
+         style="top: 10px; left: 500px;"
+         onmousedown="Motion_Elem(this,event); return false;"
+         onclick="MarioClick(this);MarioLoadWay(this);">Mario_Blue
+    </div>
+    <div id="obstacle"
+         style="top: 20px; left: 140px;">
+
+    </div>
+</div>
+
+</body>
+</html>
